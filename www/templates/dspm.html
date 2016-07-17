@@ -1,123 +1,22 @@
 <ion-view view-title="Playlist">
-  <ion-content>
-    
   
-         
-
-<div class="list list-inset" ng-repeat="data in dspm">
-
-
-            <a class="item " href="#">
-      
-      <h2>{{data.hospcode}} {{data.hosname}}</h2>
-      <p>เป้าหมาย   {{data.target}}    คน</p>
-        <p>ผลงาน   {{data.result}}    คน</p>
-    </a>
+    
+  <div ng-controller="DspmCtrl">
+    
+    <ion-content>
+        <div class="row header">
+          <div class="col">รหัสหน่วยบริการ</div>
+          <div class="col">หน่วยบริการ</div>
+          <div class="col">เป้าหมาย</div>
+          <div class="col">ผลงาน</div>
+          <div class="col"></div>
         </div>
-
-
-<div class="row">
-        <div class="col">
-          <div class="col-demo">.col</div>
+        <div class="row" ng-repeat="data in dspm">
+          <div class="col">{{data.hospcode}}</div>
+          <div class="col">{{data.hosname}}</div>
+          <div class="col"> {{data.target}}</div>
+          <div class="col">{{data.result}}</div>
+          <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div>
         </div>
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col-50">
-          <div class="col-demo">.col</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">.col</div>
-        </div>
-        <div class="col col-25 col-offset-25">
-          <div class="col-demo">.col</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="col-demo">Line 1</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col-top">
-          <div class="col-demo">Line 1</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col-center">
-          <div class="col-demo">Line 1</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col col-bottom">
-          <div class="col-demo">Line 1</div>
-        </div>
-        <div class="col">
-          <div class="col-demo">Line 1<br>Line 2<br>Line 3</div>
-        </div>
-      </div>
-
-    </div>
-
-
-
-        <!--
-        <ion-list>
-                    <div class="item col-header ">
-                <div class="flex-container  ">
-                <div class="col ">รหัสหน่วยบริการ</div>
-                 <div class="col">หน่วยบริการ</div>
-                 <div class="col">เป้าหมาย</div>
-                 <div class="col">ผลงาน</div>
-                </div>
-                    </div>
- <div class="item " style="border: 1 px">
-                <div class="flex-container" ng-repeat="data in dspm">
-                
-                <div class="col">{{data.hospcode}}</div>
-                 <div class="col">{{data.hosname}}</div>
-                 <div class="col">{{data.target}}</div>
-                 <div class="col">{{data.result}}</div>
-                </div>
- </div>
-                    
-
-                   
-      </ion-list>
-      -->
   </ion-content>
 </ion-view>
