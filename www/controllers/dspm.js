@@ -8,4 +8,12 @@ angular.module('starter')
       console.log($scope.dspm);
 
     });
+})
+
+
+.controller('DspmPcuCtrl', function($scope,$state,$stateParams) {
+
+      console.log($stateParams);
+
+    
 });

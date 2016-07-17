@@ -1,4 +1,4 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="ผลงานรณรงค์คัดกรองพัฒนาการเด็ก">
   
     
   <div ng-controller="DspmCtrl">
@@ -16,7 +16,7 @@
           <div class="col">{{data.hosname}}</div>
           <div class="col"> {{data.target}}</div>
           <div class="col">{{data.result}}</div>
-          <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div>
+          <div class="col"><a href="#/app/dspmPcu/{{data.hospcode}}" class="button" >Add</button></div>
         </div>
   </ion-content>
 </ion-view>
