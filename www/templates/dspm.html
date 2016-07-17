@@ -1,18 +1,58 @@
 <ion-view view-title="Playlist">
   <ion-content>
-   <div class="row header">
-          <div class="col">Utility Company Name</div>
-          <div class="col">Service Code</div>
-          <div class="col">Pay Limit</div>
-          <div class="col">Account Number to Use</div>
-          <div class="col"></div>
+    <!--
+   <div class="row header responsive-sm">
+         
+
+          <div class="col " style=" border: 1px solid ; align: center">รหัสหน่วยบริการ</div>
+          <div class="col" style=" border: 1px solid">หน่วยบริการ</div>
+          <div class="col" style=" border: 1px solid">เป้าหมาย</div>
+          <div class="col " style=" border: 1px solid">ผลงาน</div>
+          <div class="col " style=" border: 1px solid"></div>
         </div>
-        <div class="row" ng-repeat="data in ctrl.data">
-          <div class="col">{{data.name}}</div>
-          <div class="col">{{data.code}}</div>
-          <div class="col">LK {{data.limit}}</div>
-          <div class="col">{{data.account}}</div>
+        <div class="row responsive-sm" ng-repeat="data in dspm">
+          <div class="col">{{data.hospcode}}</div>
+          <div class="col">{{data.hosname}}</div>
+          <div class="col"> {{data.target}}</div>
+          <div class="col">{{data.result}}</div>
           <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div>
         </div>
+        -->
+
+        <div class="list list-inset" ng-repeat="data in dspm">
+
+
+            <a class="item " href="#">
+      
+      <h2>{{data.hospcode}} {{data.hosname}}</h2>
+      <p>เป้าหมาย   {{data.target}}    คน</p>
+        <p>ผลงาน   {{data.result}}    คน</p>
+    </a>
+        </div>
+        
+        <!--
+        <ion-list>
+                    <div class="item col-header ">
+                <div class="flex-container  ">
+                <div class="col ">รหัสหน่วยบริการ</div>
+                 <div class="col">หน่วยบริการ</div>
+                 <div class="col">เป้าหมาย</div>
+                 <div class="col">ผลงาน</div>
+                </div>
+                    </div>
+ <div class="item " style="border: 1 px">
+                <div class="flex-container" ng-repeat="data in dspm">
+                
+                <div class="col">{{data.hospcode}}</div>
+                 <div class="col">{{data.hosname}}</div>
+                 <div class="col">{{data.target}}</div>
+                 <div class="col">{{data.result}}</div>
+                </div>
+ </div>
+                    
+
+                   
+      </ion-list>
+      -->
   </ion-content>
 </ion-view>

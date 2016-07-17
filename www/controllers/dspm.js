@@ -1,13 +1,11 @@
 angular.module('starter')
 
 
-.controller('DspmCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('DspmCtrl', function($scope,$state,$http) {
+ $http.get('http://118.175.76.244:81/ksn_hdc_api/dspm_main.php').success(function(result) {
+      $scope.dspm = result;
+
+      console.log($scope.dspm);
+
+    });
 });

@@ -1,0 +1,46 @@
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ionic List Directive</title>
+   
+    <link href="http://code.ionicframework.com/1.0.0-beta.8/css/ionic.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.0.0-beta.8/js/ionic.bundle.js">
+    </script>
+  </head>
+
+  <body ng-controller="MyCtrl">
+    
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Flexbox Columns</h1>
+    </ion-header-bar>
+
+    <ion-content>
+
+      <ion-list>
+
+            <div class="item col-header item-icon-right">
+                <div class="flex-container wrap">
+                    <div ng-repeat="column in data.columns" ng-click="sortBy(column.id)">
+                        <div class="column" ng-class="{ 'underlined' : data.sortOn === column.id }">{{column.name}}&nbsp;</div>
+                        <div class="column-sort">
+                            <i ng-class="{'ion-chevron-up' : data.sortReverse === false, 'ion-chevron-down' : data.sortReverse === true} " ng-if="data.sortOn === column.id"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item low-pad-item item-icon-right" ng-repeat="item in data.items | orderBy:sortData:data.sortReverse ">
+                <div class="flex-container wrap">
+                    <div ng-repeat="column in data.columns">
+                        <div class="column">{{item[column.id]}}&nbsp;</div>
+                    </div>
+                </div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </div>        
+      </ion-list>
+
+    </ion-content>
+      
+  </body>
+</html>
