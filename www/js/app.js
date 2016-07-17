@@ -67,7 +67,19 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
-  });
+  })
+
+   .state('app.dspm', {
+    url: '/dspm',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/dspm.html',
+        controller: 'DspmCtrl'
+      }
+    }
+  })
+
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });
