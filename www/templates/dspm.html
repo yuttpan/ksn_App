@@ -1,38 +1,35 @@
-<ion-view view-title="Playlist">
-  <ion-content>
-    <!--
-   <div class="row header responsive-sm">
-         
 
-          <div class="col " style=" border: 1px solid ; align: center">รหัสหน่วยบริการ</div>
-          <div class="col" style=" border: 1px solid">หน่วยบริการ</div>
-          <div class="col" style=" border: 1px solid">เป้าหมาย</div>
-          <div class="col " style=" border: 1px solid">ผลงาน</div>
-          <div class="col " style=" border: 1px solid"></div>
-        </div>
-        <div class="row responsive-sm" ng-repeat="data in dspm">
-          <div class="col">{{data.hospcode}}</div>
-          <div class="col">{{data.hosname}}</div>
-          <div class="col"> {{data.target}}</div>
-          <div class="col">{{data.result}}</div>
-          <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div>
-        </div>
-        -->
+<ion-view view-title="ผลงานรณรงค์คัดกรองพัฒนาการเด็ก">
+  <ion-content ng-controller="DspmCtrl">
+   
 
-        <div class="list list-inset" ng-repeat="data in dspm">
-
-
-            <a class="item " href="#">
-      
-      <h2>{{data.hospcode}} {{data.hosname}}</h2>
-      <p>เป้าหมาย   {{data.target}}    คน</p>
-        <p>ผลงาน   {{data.result}}    คน</p>
-    </a>
-        </div>
-        
+  
     
+  
+    
+    <div class="card">
+   
 
-                   
-      </ion-list>
+       
+        <table class="table table-hover">
+  <tr>
+   <th>รหัสหน่วยบริการ</th>
+          <th>หน่วยบริการ</th>
+          <th>เป้าหมาย</th>
+          <th>ผลงาน</th>
+          <th></th>
+  
+</tr>
+ <tr ng-repeat="data in dspm">
+          <td>{{data.hospcode}}</td>
+          <td >{{data.hosname}}</td>
+          <td > {{data.target}}</td>
+          <td >{{data.result}}</td>
+          <td><a href="#/app/dspmPcu/{{data.hospcode}}" class="button" >Add</button></td>
+        </tr>
+</table>
+
+</div>
+
   </ion-content>
 </ion-view>
